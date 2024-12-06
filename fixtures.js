@@ -1,7 +1,7 @@
 import { test as base } from '@playwright/test';
 import HomePage from './pom/pages/HomePage';
 import LoginPage from './pom/pages/LoginPage';
-// import SideMenuComponent from './pom/components/SideMenuComponent';
+import ProjectPage from "./pom/pages/ProjectPage";
 
 export const test = base.extend({
 
@@ -13,7 +13,7 @@ export const test = base.extend({
         await use(new LoginPage(page));
     },
 
-    // sideMenu: async ({ page }, use) => {
-    //     await use(new SideMenuComponent(page));
-    // },
+    projectPage: async ({ page }, use) => {
+        await use(new ProjectPage(page));
+    }
 });

@@ -1,5 +1,3 @@
-import {test} from '@playwright/test';
-
 export default class LoginPage {
 
     constructor(page) {
