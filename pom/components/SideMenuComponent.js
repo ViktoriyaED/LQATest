@@ -2,10 +2,11 @@ export default class SideMenuComponent {
 
     constructor(page) {
         this.page = page;
-        this.crossFunctionalProjectPlan = this.page.getByText('Cross-functional project plan, Project');
+
+        this.sideMenuOption = (option) => this.page.getByText(option);
     }
 
-    async clickCrossFunctionalProjectPlan() {
-        this.crossFunctionalProjectPlan.click();
+    async clickSideMenuOption(option) {
+        this.sideMenuOption(option).click();
     }
 }
