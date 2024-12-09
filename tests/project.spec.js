@@ -1,15 +1,9 @@
 import {expect} from '@playwright/test';
 import {test} from '../fixtures.js';
-import {CREDENTIALS, TEST_CASES} from "../testData";
+import {TEST_CASES} from "../testData";
 
-test.beforeEach(async ({page, loginPage, homePage}) => {
+test.beforeEach(async ({page}) => {
     await page.goto('/');
-    await loginPage.clickCloseCookieBannerButton();
-    await loginPage.fillEmailInputField(CREDENTIALS.email);
-    await loginPage.clickContinueButton();
-    await loginPage.fillPasswordInputField(CREDENTIALS.password);
-    await loginPage.clickLogInButton();
-    await homePage.h1Header.waitFor();
 });
 
 test.describe('TestCases', () => {
